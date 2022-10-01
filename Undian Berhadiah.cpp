@@ -15,12 +15,13 @@ void solve(int *arr, int x, int size){
     }
 
     int temp = 0;
+    temp = selisih[0];
+
     for (int i = 0; i < size; i++){
-        if (selisih[i] < selisih[i + 1]){
-            temp= selisih[i];
+        if (temp > selisih[i]){
+            temp = selisih[i];
         }
     }
-
     for (int i = 0; i < size; i++){
         if (abs(arr[i] - x ) == temp){
             result.push_back(arr[i]);
@@ -45,7 +46,7 @@ int main(int argc, char const *argv[])
     for (int i = 0 ; i < n; i++){
         cin >> arr[i];
     }
-    cout << endl;
+    // cout << endl;
     solve(arr, x, n);
 
     return 0;
